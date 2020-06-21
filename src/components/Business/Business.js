@@ -18,8 +18,8 @@ class Business extends Component{
                         <p>{this.props.business.state} {this.props.business.zipCode}</p>
                     </div>
                     <div className="Business-Reviews">
-                        <h3>{this.props.business.category}</h3>
-                        <h3 className="rating">{this.props.business.rating}</h3>
+                        <h3>{this.props.business.category.toUpperCase()}</h3>
+                        <h3 className="rating">{this.props.business.rating} stars</h3>
                         <p>{this.props.business.reviewCount}</p>
                     </div>
                 </div>
