@@ -20,7 +20,7 @@ class Business extends Component{
                     <div className="Business-Reviews">
                         <h3>{this.props.business.category.toUpperCase()}</h3>
                         <h3 className="rating">{this.props.business.rating} stars</h3>
-                        <p>{this.props.business.reviewCount}</p>
+                        <p>{this.props.business.reviewCount} Reviews</p>
                     </div>
                 </div>
             </div>
