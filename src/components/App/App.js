@@ -10,7 +10,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      businesses: []
+      businesses: [],
+      error: null
     }
 
     this.searchYelp = this.searchYelp.bind(this)
@@ -20,8 +21,11 @@ class App extends Component {
     Yelp.search(term, location, sortBy)
       .then((businesses) => {
         this.setState({
-          businesses: businesses
+          businesses: businesses,
+          error: null
         })
+    }).catch(() => {
+      this.setState({ error: "Unable to search businesses. Please try again." })
     })
   }
 
@@ -30,6 +34,7 @@ class App extends Component {
       <div>
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp}/>
+        {this.state.error && <p role="alert">{this.state.error}</p>}
         <BusinessList businesses={this.state.businesses}/>
       </div>
     )
